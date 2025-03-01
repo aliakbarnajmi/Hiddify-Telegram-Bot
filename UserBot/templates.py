@@ -149,7 +149,7 @@ def connection_help_template(header=""):
 ⭕️Required software for connecting to config
 
 📥Android:
-<a https://github.com/2dust/v2rayNG/releases/download/1.9.31/v2rayNG_1.9.31_universal.apk'>لینک دانلود مستقیم و بدون فیلتر نرم افزار V2rayNG</a>
+<a href='https://play.google.com/store/apps/details?id=com.v2ray.ang'>V2RayNG</a>
 
 📥iOS:
 <a href='https://apps.apple.com/us/app/streisand/id6450534064'>Streisand</a>
