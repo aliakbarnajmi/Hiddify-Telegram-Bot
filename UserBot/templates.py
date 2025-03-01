@@ -126,8 +126,7 @@ def connection_help_template(header=""):
 ⭕️ نرم افزار های مورد نیاز برای اتصال به کانفیگ
     
 📥اندروید:
-<a href='https://play.google.com/store/apps/details?id=com.v2ray.ang'>V2RayNG</a>
-<a href='https://play.google.com/store/apps/details?id=ang.hiddify.com'>HiddifyNG</a>
+<a href='https://t.me/help_vpn27/27'>وی تو ری</a>
 
 📥آی او اس:
 <a href='https://apps.apple.com/us/app/streisand/id6450534064'>Streisand</a>
@@ -151,7 +150,6 @@ def connection_help_template(header=""):
 
 📥Android:
 <a href='https://play.google.com/store/apps/details?id=com.v2ray.ang'>V2RayNG</a>
-<a href='https://play.google.com/store/apps/details?id=ang.hiddify.com'>HiddifyNG</a>
 
 📥iOS:
 <a href='https://apps.apple.com/us/app/streisand/id6450534064'>Streisand</a>
