@@ -149,7 +149,8 @@ def connection_help_template(header=""):
 ⭕️Required software for connecting to config
 
 📥Android:
-<a href='https://play.google.com/store/apps/details?id=com.v2ray.ang'>V2RayNG</a>
+<a href='https://play.google.com/store/apps/details?id=com.v2ray.ang'>گوگل پلی استور</a>
+اموزش ویدئویی(https://t.me/help_vpn27/27)
 
 📥iOS:
 <a href='https://apps.apple.com/us/app/streisand/id6450534064'>Streisand</a>
