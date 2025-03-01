@@ -44,7 +44,7 @@
 برای نصب ربات دستور زیر را اجرا کنید:
  
 ```bash
-sudo bash -c "$(curl -Lfo- https://raw.githubusercontent.com/B3H1Z/Hiddify-Telegram-Bot/main/install.sh)"
+sudo bash -c "$(curl -Lfo- https://raw.githubusercontent.com/aliakbarnajmi/Hiddify-Telegram-Bot/refs/heads/main/install.sh)"
 ```
 <br>
 
@@ -64,7 +64,7 @@ sudo bash -c "$(curl -Lfo- https://raw.githubusercontent.com/B3H1Z/Hiddify-Teleg
 ## دستورات
  به‌روزرسانی ربات
 ```bash
-cd /opt/Hiddify-Telegram-Bot/ && curl -fsSL -o /opt/Hiddify-Telegram-Bot/update.sh https://raw.githubusercontent.com/B3H1Z/Hiddify-Telegram-Bot/main/update.sh && chmod +x /opt/Hiddify-Telegram-Bot/update.sh && bash /opt/Hiddify-Telegram-Bot/update.sh
+cd /opt/Hiddify-Telegram-Bot/ && curl -fsSL -o /opt/Hiddify-Telegram-Bot/update.sh https://raw.githubusercontent.com/aliakbarnajmi/Hiddify-Telegram-Bot/refs/heads/main/update.sh && chmod +x /opt/Hiddify-Telegram-Bot/update.sh && bash /opt/Hiddify-Telegram-Bot/update.sh
 ```
  راه‌اندازی مجدد ربات
 ```bash
@@ -85,7 +85,7 @@ cd /opt/Hiddify-Telegram-Bot/ && python3 config.py && chmod +x restart.sh && ./r
 ```
  نصب مجدد ربات
 ```bash
-cd /opt/ && rm -rf /opt/Hiddify-Telegram-Bot/ && sudo bash -c "$(curl -Lfo- https://raw.githubusercontent.com/B3H1Z/Hiddify-Telegram-Bot/main/install.sh)"
+cd /opt/ && rm -rf /opt/Hiddify-Telegram-Bot/ && sudo bash -c "$(curl -Lfo- https://raw.githubusercontent.com/aliakbarnajmi/Hiddify-Telegram-Bot/refs/heads/main/install.sh)"
 ```
   حذف ربات
 ```bash
