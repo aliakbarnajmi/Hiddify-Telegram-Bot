@@ -99,7 +99,7 @@
         "BANNED_USER": "⛔️You are banned from using the bot"
     },
     "FA": {
-        "WELCOME": " به ربات نمایندگان خوش آمدید",
+        "WELCOME": "به ربات کاربران خوش آمدید",
         "INFO_USER": "📄اطلاعات اشتراک شما",
         "SUBSCRIPTION_STATUS": "❔وضعیت:",
         "ACTIVE_SUBSCRIPTION_STATUS": "🟢 فعال",
@@ -179,7 +179,7 @@
         "MANUAL_LIN": "📥Linux:\n<a href='https://github.com/MatsuriDayo/nekoray/releases'>Nekoray</a>",
         "MANUAL_MAC": "📥Mac:\n<a href='https://github.com/MatsuriDayo/nekoray/releases'>Nekoray</a>",
         "MANUAL_HDR": "لطفا سیستم عامل خود را انتخاب کنید",
-        "WELCOME_TO_ADMIN": "ربات کاربران VPN 27 با موفقیت راه‌اندازی شد.\nبرای شروع کار، دستور /start را ارسال کنید.",
+        "WELCOME_TO_ADMIN": "ربات کاربران هیدی بات با موفقیت راه‌اندازی شد.\nبرای شروع کار، دستور /start را ارسال کنید.",
         "BUY_SUBSCRIPTION_CLOSED": "در حال حاضر امکان خرید اشتراک وجود ندارد.",
         "RENEWAL_SUBSCRIPTION_CLOSED": "در حال حاضر امکان تمدید اشتراک وجود ندارد.",
         "INFO_USER_NAME": "⬖ کاربر:",
