@@ -149,6 +149,7 @@ def connection_help_template(header=""):
 ⭕️Required software for connecting to config
 
 📥Android:
+v2RayNG
 <a href='https://play.google.com/store/apps/details?id=com.v2ray.ang'>گوگل پلی استور</a>
 اموزش ویدئویی(https://t.me/help_vpn27/27)
 
