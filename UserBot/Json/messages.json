@@ -99,7 +99,7 @@
         "BANNED_USER": "⛔️You are banned from using the bot"
     },
     "FA": {
-        "WELCOME": "به ربات کاربران خوش آمدید",
+        "WELCOME": " به ربات نمایندگان خوش آمدید",
         "INFO_USER": "📄اطلاعات اشتراک شما",
         "SUBSCRIPTION_STATUS": "❔وضعیت:",
         "ACTIVE_SUBSCRIPTION_STATUS": "🟢 فعال",
