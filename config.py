@@ -234,7 +234,7 @@ def set_by_user():
     return admin_ids, token, url, lang, client_token
 
 def find_user_path(admin_url):
-    BASE_URL = urlparse(admin_url).scheme + "://" + urlparse(url).netloc
+    BASE_URL = urlparse(admin_url).scheme + "://" + urlparse(admin_url).netloc
     if len(urlparse(admin_url).path.split('/')) == 3:
         ADMIN_PATH = urlparse(admin_url).path.split('/')[1]
         admin_uuid = urlparse(admin_url).path.split('/')[2]
