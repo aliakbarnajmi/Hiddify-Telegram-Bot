@@ -235,9 +235,9 @@ def set_by_user():
 
 def find_user_path(admin_url):
     BASE_URL = urlparse(admin_url).scheme + "://" + urlparse(url).netloc
-    if len(urlparse(url).path.split('/')) == 3:
-        ADMIN_PATH = urlparse(url).path.split('/')[1]
-        admin_uuid = urlparse(url).path.split('/')[2]
+    if len(urlparse(admin_url).path.split('/')) == 3:
+        ADMIN_PATH = urlparse(admin_url).path.split('/')[1]
+        admin_uuid = urlparse(admin_url).path.split('/')[2]
     else:
         return False
     body = {'Accept': 'application/json',
