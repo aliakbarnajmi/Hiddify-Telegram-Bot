@@ -48,6 +48,7 @@
     "NO": "❌خیر",
     "CONFIGS_DIR": "کانفیگ مستقیم",
     "CONFIGS_SUB_AUTO": "اشتراک همه نت ها به جز ایرانسل",
+    "CONFIGS_SUB_IranCell": "اشتراک به جز ایرانسل",
     "CONFIGS_SUB": "لینک اشتراک",
     "CONFIGS_SUB_B64": "لینک اشتراک b64",
     "CONFIGS_CLASH": "اشتراک Clash",

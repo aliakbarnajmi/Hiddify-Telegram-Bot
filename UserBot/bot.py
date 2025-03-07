@@ -666,6 +666,7 @@ def callback_query(call: CallbackQuery):
     data = call.data.split(':')
     key = data[0]
     value = data[1]
+    print(f"key = {key}\t value = {value}")
 
     global selected_server_id
     # ----------------------------------- Link Subscription Area -----------------------------------
@@ -785,9 +786,11 @@ def callback_query(call: CallbackQuery):
         bot.send_message(call.message.chat.id, MESSAGES['INCREASE_WALLET_BALANCE_AMOUNT'], reply_markup=cancel_markup())
 
         bot.register_next_step_handler(call.message, next_step_increase_wallet_balance)
+    
     elif key == 'increase_wallet_balance_specific':
         bot.delete_message(call.message.chat.id, call.message.message_id)
         increase_wallet_balance_specific(call.message,value)
+    
     elif key == 'renewal_subscription':
         settings = utils.all_configs_settings()
         if not settings['renewal_subscription_status']:
