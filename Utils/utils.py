@@ -200,6 +200,7 @@ def sub_links(uuid, url= None):
         #             if users_list:
         #                 url = server['url']
         #                 break
+    logging.info(f"url = {url}")
     BASE_URL = urlparse(url).scheme + "://" + urlparse(url).netloc
     logging.info(f"Get sub links of user - {uuid}")
     sub = {}
