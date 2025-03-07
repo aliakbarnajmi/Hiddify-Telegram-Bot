@@ -122,6 +122,7 @@ def buy_from_wallet_confirm(message: Message, plan):
         else:
             bot.delete_message(message.chat.id, message.message_id)
             bot.send_message(message.chat.id, MESSAGES['REQUEST_SEND_NAME'], reply_markup=cancel_markup())
+            # bot.send_message(message.chat.id, MESSAGES['REQUEST_SEND_COMMENT'], reply_markup=cancel_markup())
             bot.register_next_step_handler(message, next_step_send_name_for_buy_from_wallet, plan)
 
 
@@ -387,7 +388,7 @@ def next_step_send_name_for_buy_from_wallet(message: Message, plan):
 
     # value = ADMIN_DB.add_default_user(name, plan['days'], plan['size_gb'],)
     sub_id = random.randint(1000000, 9999999)
-    value = api.insert(URL, name=name, usage_limit_GB=plan['size_gb'], package_days=plan['days'],comment=f"HidyBot:{sub_id}")
+    value = api.insert(URL, name=name, usage_limit_GB=plan['size_gb'], package_days=plan['days'],comment=f"Bot:{sub_id}")
     if not value:
         bot.send_message(message.chat.id,
                          f"{MESSAGES['UNKNOWN_ERROR']}:Create User Error\n{MESSAGES['ORDER_ID']} {order_id}",
@@ -452,7 +453,7 @@ def next_step_send_name_for_get_free_test(message: Message, server_id):
         return
 
     settings = utils.all_configs_settings()
-    test_user_comment = "HidyBot:FreeTest"
+    test_user_comment = "Bot:FreeTest"
     server = USERS_DB.find_server(id=server_id)
     if not server:
         bot.send_message(message.chat.id, MESSAGES['UNKNOWN_ERROR'],
