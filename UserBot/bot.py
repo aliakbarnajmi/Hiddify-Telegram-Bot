@@ -666,7 +666,7 @@ def callback_query(call: CallbackQuery):
     data = call.data.split(':')
     key = data[0]
     value = data[1]
-    print(f"key = {key}\t value = {value}")
+    logging.warning(f"key = {key}\t value = {value}")
 
     global selected_server_id
     # ----------------------------------- Link Subscription Area -----------------------------------
