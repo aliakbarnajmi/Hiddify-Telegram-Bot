@@ -233,6 +233,21 @@ def set_by_user():
 
     return admin_ids, token, url, lang, client_token
 
+def find_user_path(admin_url):
+    BASE_URL = urlparse(admin_url).scheme + "://" + urlparse(url).netloc
+    if len(urlparse(url).path.split('/')) == 3:
+        ADMIN_PATH = urlparse(url).path.split('/')[1]
+        admin_uuid = urlparse(url).path.split('/')[2]
+    else:
+        return False
+    body = {'Accept': 'application/json',
+            'Hiddify-API-Key': admin_uuid}
+    
+    url = f"{BASE_URL}/{ADMIN_PATH}/api/v2/admin/all-configs/"
+    res = requests.get(url, headers=body)
+    js = res.json()
+    user_path = js["chconfigs"]['0']['proxy_path_client']
+    return user_path
 
 def set_config_in_db(db, admin_ids, token, url, lang, client_token):
     try:
@@ -249,7 +264,7 @@ def set_config_in_db(db, admin_ids, token, url, lang, client_token):
             db.edit_str_config("bot_lang", value=lang)
         # if servers is not exists, create it
         if not db.select_servers():
-            db.add_server(url, 2000, title="Main Server", default_server=True)
+            db.add_server(url, 200, title="Main Server", default_server=True)
         else:
             # find default server
             default_servers = db.find_server(default_server=True)
@@ -259,7 +274,7 @@ def set_config_in_db(db, admin_ids, token, url, lang, client_token):
                 if default_server['url'] != url:
                     db.edit_server(default_server_id, url=url)
             else:
-                db.add_server(url, 2000, title="Main Server", default_server=True)
+                db.add_server(url, 200, title="Main Server", default_server=True)
     except Exception as e:
         logging.error(f"Error while inserting config to database \n Error:{e}")
         raise Exception(f"Error while inserting config to database \nBe in touch with {HIDY_BOT_ID}")

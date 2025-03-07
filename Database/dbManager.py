@@ -147,6 +147,7 @@ class UserDBManager:
             cur.execute("CREATE TABLE IF NOT EXISTS servers ("
                         "id INTEGER PRIMARY KEY AUTOINCREMENT,"
                         "url TEXT NOT NULL,"
+                        "user_path TEXT NOT NULL,"
                         "title TEXT, description TEXT,"
                         "user_limit INTEGER NOT NULL,"
                         "status BOOLEAN NOT NULL,"
@@ -914,12 +915,12 @@ class UserDBManager:
             logging.error(f"Error while selecting all servers \n Error:{e}")
             return None
         
-    def add_server(self, url, user_limit, title=None, description=None, status=True, default_server=False):
+    def add_server(self, url, user_limit, user_path, title=None, description=None, status=True, default_server=False):
         cur = self.conn.cursor()
         try:
             cur.execute(
-                "INSERT INTO servers(url,title,description,user_limit,status,default_server) VALUES(?,?,?,?,?,?)",
-                (url, title, description, user_limit, status, default_server))
+                "INSERT INTO servers(url,title,description,user_limit,status,default_server,user_path) VALUES(?,?,?,?,?,?)",
+                (url, title, description, user_limit, status, default_server, user_path))
             self.conn.commit()
             logging.info(f"Server [{url}] added successfully!")
             return True
