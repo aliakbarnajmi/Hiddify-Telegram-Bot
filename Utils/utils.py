@@ -176,8 +176,8 @@ def user_info(url, uuid):
 
 
 # Get sub links - return dict of sub links
-def sub_links(uuid, url= None):
-    if not url:
+def sub_links(uuid, url= None, user_path = None):
+    if not url or not user_path:
         non_order_users = USERS_DB.find_non_order_subscription(uuid=uuid)
         order_users = USERS_DB.find_order_subscription(uuid=uuid)
         if order_users:
@@ -186,6 +186,7 @@ def sub_links(uuid, url= None):
             if servers:
                 server = servers[0]
                 url = server['url']
+                user_path = server['user_path']
         elif non_order_users:
             non_order_user = non_order_users[0]
             servers = USERS_DB.find_server(id=non_order_user['server_id'])
