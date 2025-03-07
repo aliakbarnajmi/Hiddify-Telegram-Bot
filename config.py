@@ -266,7 +266,7 @@ def set_config_in_db(db, admin_ids, token, url, lang, client_token):
         logging.info(f"user_path = {user_path}")
         # if servers is not exists, create it
         if not db.select_servers():
-            db.add_server(url, 200, title="Main Server", default_server=True, user_path = user_path)
+            db.add_server(url, user_path, 200, title="Main Server", default_server=True)
         else:
             # find default server
             default_servers = db.find_server(default_server=True)
@@ -276,7 +276,7 @@ def set_config_in_db(db, admin_ids, token, url, lang, client_token):
                 if default_server['url'] != url:
                     db.edit_server(default_server_id, url=url)
             else:
-                db.add_server(url, 200, title="Main Server", default_server=True, user_path = user_path)
+                db.add_server(url, user_path, 200, title="Main Server", default_server=True)
     except Exception as e:
         logging.error(f"Error while inserting config to database \n Error:{e}")
         raise Exception(f"Error while inserting config to database \nBe in touch with {HIDY_BOT_ID}")
