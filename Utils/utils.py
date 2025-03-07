@@ -192,6 +192,7 @@ def sub_links(uuid, url= None):
             if servers:
                 server = servers[0]
                 url = server['url']
+                user_path = server['user_path']
         # else:
         #     servers = USERS_DB.select_servers()
         #     if servers:
@@ -207,14 +208,14 @@ def sub_links(uuid, url= None):
     PANEL_DIR = urlparse(url).path.split('/')
     # Clash open app: clash://install-config?url=
     # Hidden open app: clashmeta://install-config?url=
-    sub['clash_configs'] = f"{BASE_URL}/{PANEL_DIR[1]}/{uuid}/clash/all.yml"
-    sub['hiddify_configs'] = f"{BASE_URL}/{PANEL_DIR[1]}/{uuid}/clash/meta/all.yml"
-    sub['sub_link'] = f"{BASE_URL}/{PANEL_DIR[1]}/{uuid}/all.txt"
-    sub['sub_link_b64'] = f"{BASE_URL}/{PANEL_DIR[1]}/{uuid}/all.txt?base64=True"
+    sub['clash_configs'] = f"{BASE_URL}/{user_path}/{uuid}/clash/all.yml"
+    sub['hiddify_configs'] = f"{BASE_URL}/{user_path}/{uuid}/clash/meta/all.yml"
+    sub['sub_link'] = f"{BASE_URL}/{user_path}/{uuid}/all.txt"
+    sub['sub_link_b64'] = f"{BASE_URL}/{user_path}/{uuid}/all.txt?base64=True"
     # Add in v8.0 Hiddify
-    sub['sub_link_auto'] = f"{BASE_URL}/{PANEL_DIR[1]}/{uuid}/sub/?asn=unknown"
-    sub['sing_box_full'] = f"{BASE_URL}/{PANEL_DIR[1]}/{uuid}/full-singbox.json?asn=unknown"
-    sub['sing_box'] = f"{BASE_URL}/{PANEL_DIR[1]}/{uuid}/singbox.json?asn=unknown"
+    sub['sub_link_auto'] = f"{BASE_URL}/{user_path}/{uuid}/sub/?asn=unknown"
+    sub['sing_box_full'] = f"{BASE_URL}/{user_path}/{uuid}/full-singbox.json?asn=unknown"
+    sub['sing_box'] = f"{BASE_URL}/{user_path}/{uuid}/singbox.json?asn=unknown"
     return sub
 
 
