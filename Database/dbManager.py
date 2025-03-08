@@ -751,9 +751,9 @@ class UserDBManager:
 
 
         self.add_bool_config("visible_conf_dir", False)
-        self.add_bool_config("visible_conf_sub_auto", True)
+        self.add_bool_config("visible_conf_sub_auto", False)
         self.add_bool_config("visible_conf_sub_url", False)
-        self.add_bool_config("visible_conf_sub_url_b64", False)
+        self.add_bool_config("visible_conf_sub_url_b64", True)
         self.add_bool_config("visible_conf_clash", False)
         self.add_bool_config("visible_conf_hiddify", False)
         self.add_bool_config("visible_conf_sub_sing_box", False)
