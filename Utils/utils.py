@@ -176,7 +176,7 @@ def user_info(url, uuid):
 
 
 # Get sub links - return dict of sub links
-def sub_links(uuid, url= None, user_path = None):
+def sub_links(uuid, url= None, user_path = None, name = None):
     if not url or not user_path:
         non_order_users = USERS_DB.find_non_order_subscription(uuid=uuid)
         order_users = USERS_DB.find_order_subscription(uuid=uuid)
@@ -202,6 +202,8 @@ def sub_links(uuid, url= None, user_path = None):
         #             if users_list:
         #                 url = server['url']
         #                 break
+    if not name:
+        name = "sub"
     logging.info(f"url = {url}")
     BASE_URL = urlparse(url).scheme + "://" + urlparse(url).netloc
     logging.info(f"Get sub links of user - {uuid}")
@@ -209,14 +211,14 @@ def sub_links(uuid, url= None, user_path = None):
     PANEL_DIR = urlparse(url).path.split('/')
     # Clash open app: clash://install-config?url=
     # Hidden open app: clashmeta://install-config?url=
-    sub['clash_configs'] = f"{BASE_URL}/{user_path}/{uuid}/clash/all.yml"
-    sub['hiddify_configs'] = f"{BASE_URL}/{user_path}/{uuid}/clash/meta/all.yml"
-    sub['sub_link'] = f"{BASE_URL}/{user_path}/{uuid}/all.txt"
-    sub['sub_link_b64'] = f"{BASE_URL}/{user_path}/{uuid}/all.txt?base64=True"
+    sub['clash_configs'] = f"{BASE_URL}/{user_path}/{uuid}/clash/?asn=unknown#{name}"
+    sub['hiddify_configs'] = f"{BASE_URL}/{user_path}/{uuid}/sub64/?asn=unknown#{name}"
+    sub['sub_link'] = f"{BASE_URL}/{user_path}/{uuid}/sub/?asn=unknown#{name}"
+    sub['sub_link_b64'] = f"{BASE_URL}/{user_path}/{uuid}/sub64/?asn=unknown#{name}"
     # Add in v8.0 Hiddify
-    sub['sub_link_auto'] = f"{BASE_URL}/{user_path}/{uuid}/sub/?asn=unknown"
-    sub['sing_box_full'] = f"{BASE_URL}/{user_path}/{uuid}/full-singbox.json?asn=unknown"
-    sub['sing_box'] = f"{BASE_URL}/{user_path}/{uuid}/singbox.json?asn=unknown"
+    sub['sub_link_auto'] = f"{BASE_URL}/{user_path}/{uuid}/auto/?asn=unknown#{name}"
+    sub['sing_box_full'] = f"{BASE_URL}/{user_path}/{uuid}/singbox/?asn=unknown#{name}"
+    sub['sing_box'] = f"{BASE_URL}/{user_path}/{uuid}/singbox/?asn=unknown#{name}"
     return sub
 
 

@@ -1250,7 +1250,7 @@ def buy_subscription(message: Message):
         users_list = api.select(server['url'] + API_PATH)
         if users_list:
             user_index = len(users_list)
-        if server['user_limit'] > user_index:
+        if int(server['user_limit']) > user_index:
             server_list.append([server,True])
         else:
             server_list.append([server,False])
