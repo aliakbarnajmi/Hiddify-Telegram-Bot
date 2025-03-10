@@ -23,7 +23,7 @@ BACKUP_LOC = os.path.join(os.getcwd(), "Backup")
 RECEIPTIONS_LOC = os.path.join(os.getcwd(), "UserBot", "Receiptions")
 BOT_BACKUP_LOC = os.path.join(os.getcwd(), "Backup", "Bot")
 API_PATH = "/api/v1"
-HIDY_BOT_ID = "@HidyBotGroup"
+HIDY_BOT_ID = "@vpn27"
 
 # if directories not exists, create it
 if not os.path.exists(LOG_DIR):

@@ -203,6 +203,18 @@ def sub_links(uuid, url= None, user_path = None, name = None):
         #                 url = server['url']
         #                 break
     if not name:
+        non_order_users = USERS_DB.find_non_order_subscription(uuid=uuid)
+        order_users = USERS_DB.find_order_subscription(uuid=uuid)
+        if order_users:
+            order_user = order_users[0]
+            user = USERS_DB.find_user(uuid = uuid)
+            if user:
+                logging.info(f"order_user = {user}")
+        elif non_order_users:
+            non_order_user = non_order_users[0]
+            user = USERS_DB.find_user(uuid = uuid)
+            if user:
+                logging.info(f"non_order_user = {user}")
         name = "sub"
     logging.info(f"url = {url}")
     BASE_URL = urlparse(url).scheme + "://" + urlparse(url).netloc
