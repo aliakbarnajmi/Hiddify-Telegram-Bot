@@ -14,7 +14,7 @@ import Utils
 
 
 
-def select(url, endpoint="/user/me/"):
+def select(url, endpoint="/user/"):
     try:
         response = requests.get(url + endpoint)
         res = Utils.utils.dict_process(url, Utils.utils.users_to_dict(response.json()))
