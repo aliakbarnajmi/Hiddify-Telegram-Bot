@@ -18,6 +18,7 @@ from Utils import api
 from version import __version__
 import zipfile
 import shutil
+from config import *
 # Global variables
 # Make Session for requests
 session = requests.session()
@@ -203,7 +204,7 @@ def sub_links(uuid, url= None, user_path = None, name = None):
         #                 url = server['url']
         #                 break
     if not name:
-        user = search_user_by_uuid(url, uuid)
+        user = search_user_by_uuid(url + API_PATH, uuid)
         if not user:
             return False
         name = user["name"]
