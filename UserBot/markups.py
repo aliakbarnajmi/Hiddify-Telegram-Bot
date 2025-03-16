@@ -9,9 +9,9 @@ from Utils.api import *
 # Main Menu Reply Keyboard Markup
 def main_menu_keyboard_markup():
     markup = ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
-    markup.add(KeyboardButton(KEY_MARKUP['SUBSCRIPTION_STATUS']))
+    markup.add(KeyboardButton(KEY_MARKUP['FREE_TEST']))
     markup.add(KeyboardButton(KEY_MARKUP['LINK_SUBSCRIPTION']), KeyboardButton(KEY_MARKUP['BUY_SUBSCRIPTION']))
-    markup.add(KeyboardButton(KEY_MARKUP['FREE_TEST']), KeyboardButton(KEY_MARKUP['WALLET']))
+    markup.add(KeyboardButton(KEY_MARKUP['SUBSCRIPTION_STATUS']), KeyboardButton(KEY_MARKUP['WALLET']))
     # KeyboardButton(KEY_MARKUP['TO_QR']),
     settings = all_configs_settings()
     if settings['msg_faq']:
