@@ -231,6 +231,6 @@ def users_bot_management_settings_panel_manual_markup():
     # markup.add(InlineKeyboardButton(KEY_MARKUP['MANUAL_MAC'],
     #                                 callback_data=f"msg_manual:mac"))
     # markup.add(InlineKeyboardButton(KEY_MARKUP['MANUAL_LIN'],
-                                    callback_data=f"msg_manual:lin"))
+    #                                 callback_data=f"msg_manual:lin"))
     markup.add(InlineKeyboardButton(KEY_MARKUP['BACK'], callback_data=f"del_msg:None"))
     return markup
