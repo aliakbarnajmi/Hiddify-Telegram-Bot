@@ -394,7 +394,7 @@ def about_template():
 
 <a href='https://github.com/aliakbarnajmi/Hiddify-Telegram-Bot'> لینک پروژه </a>
 
-<a href='https://t.me/vpn27'> گروه پشتیبانی </a> | <a href='https://t.me/vpn27'> کانال اطلاع رسانی </a>
+<a href='https://t.me/vpn27'> کانال پشتیبانی </a> | <a href='https://t.me/vpn27'> کانال اطلاع رسانی </a>
 
 این پروژه به صورت رایگان توسعه داده شده و جهت ادامه توسعه رایگان، حمایت های شما میتواند انگیزه بخش باشد❤️
 
