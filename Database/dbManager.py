@@ -10,22 +10,17 @@ from version import is_version_less
 #from Utils import api
 #from config import PANEL_URL, API_PATH, USERS_DB_LOC
 
-
-
-
 class UserDBManager:
     def __init__(self, db_file):
         self.conn = self.create_connection(db_file)
         self.create_user_table()
         #self.set_default_configs()
-
     #close connection
     def __del__(self):
         self.conn.close()
     
     def close(self):
         self.conn.close()
-    
 
     def create_connection(self, db_file):
         """ Create a database connection to a SQLite database """
@@ -152,20 +147,6 @@ class UserDBManager:
                         "description TEXT,"
                         "user_limit INTEGER NOT NULL,"
                         "status BOOLEAN NOT NULL,"
-                        "default_server BOOLEAN NOT NULL DEFAULT 0)")
-            self.conn.commit()
-            logging.info("Servers table created successfully!")
-
-            cur.execute("CREATE TABLE IF NOT EXISTS agents ("
-                        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
-                        "name TEXT NOT NULL,"
-                        "uuid TEXT NOT NULL,"
-                        "max_users INTEGER NOT NULL,"
-                        "max_debt_credit INTEGER NOT NULL,"
-                        "balance INTEGER NOT NULL DEFAULT 0,"
-                        "active_users INTEGER NOT NULL DEFAULT 0,"
-                        "usage_users INTEGER NOT NULL DEFAULT 0,"
-                        "user_limit INTEGER NOT NULL DEFAULT 100,"
                         "default_server BOOLEAN NOT NULL DEFAULT 0)")
             self.conn.commit()
             logging.info("Servers table created successfully!")
